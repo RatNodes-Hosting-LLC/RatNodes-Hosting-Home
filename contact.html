@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --text-color: #000000;
+            --hero-bg-color: #ffffff;
+        }
+
+        .dark-mode {
+            --text-color: #e0e0e0;
+            --hero-bg-color: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--hero-bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #f8f9fa !important;
+        }
+
+        .hero {
+            background-image: url('hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-color);
+            text-align: center;
+            padding: 50px 0; /* Reduced padding */
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero .btn {
+            font-size: 18px;
+            padding: 10px 30px;
+            border-radius: 30px;
+            background-color: #ff6b6b;
+            border-color: #ff6b6b;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .hero .btn:hover {
+            background-color: #ff8787;
+            border-color: #ff8787;
+        }
+
+        .feature {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            margin-top: auto; /* Auto margin to push it towards the footer */
+        }
+
+        .feature .card {
+            background-color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .feature .card:hover {
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature .card img {
+            border-radius: 15px 15px 0 0;
+        }
+
+        .feature .card-body {
+            padding: 30px;
+        }
+
+        .feature .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .feature .card-text {
+            font-size: 16px;
+            color: #6c757d;
+        }
+
+        .btn-primary {
+            background-color: #ff6b6b;
+            border-color: #ff6b6b;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff8787;
+            border-color: #ff8787;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 50px 0;
+        }
+
+        footer a {
+            color: #ffffff !important;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #f8f9fa !important;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        .flex-column-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .nav-item {
+            white-space: nowrap;
+        }
+
+        @media (max-width: 992px) {
+            .nav-item {
+                flex: 1 1 auto;
+                text-align: center;
+            }
+        }
+
+        .dark-mode header {
+            background-color: #333333;
+        }
+
+        .dark-mode .nav-link {
+            color: #e0e0e0 !important;
+        }
+
+        .dark-mode .nav-link:hover {
+            color: #ffffff !important;
+        }
+
+        .dark-mode .feature {
+            background-color: #1f1f1f;
+        }
+
+        .dark-mode .card {
+            background-color: #2a2a2a;
+            color: #e0e0e0;
+        }
+
+        .dark-mode footer {
+            background-color: #333333;
+        }
+
+        /* Additional styling for contact form */
+        .contact {
+            padding: 50px 0;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-form label {
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ff6b6b;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #ff8787;
+        }
+    </style>
+</head>
+
+<body class="light-mode">
+    <div class="d-flex flex-column min-vh-100">
+        <header>
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="logo">Hosting Company</div>
+                <nav class="d-flex flex-grow-1 justify-content-end">
+                    <ul class="nav">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="gameservers.html" class="nav-link">Game Servers</a></li>
+                        <li class="nav-item"><a href="vpshosting.html" class="nav-link">VPS Hosting</a></li>
+                        <li class="nav-item"><a href="webhosting.html" class="nav-link">Web Hosting</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                        <li class="nav-item"><a href="status.html" class="nav-link">Status</a></li>
+                    </ul>
+                </nav>
+                <div class="d-flex align-items-center">
+                    <button id="theme-toggle" class="btn btn-outline-light me-2">Toggle Dark Mode</button>
+                    <a href="#" class="btn btn-outline-light me-2">Sign Up</a>
+                    <a href="#" class="btn btn-light">Login</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow-1 contact">
+            <section class="hero">
+                <div class="container">
+                    <h1 class="display-4 fw-bold">Contact Us</h1>
+                    <p class="lead">Have questions or feedback? Reach out to us using the form below.</p>
+                </div>
+            </section>
+
+            <section class="contact-form">
+                <div class="container">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-auto">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="index.html">Home</a></li>
+                            <li class="list-inline-item"><a href="gameservers.html">Game Servers</a></li>
+                            <li class="list-inline-item"><a href="vpshosting.html">VPS Hosting</a></li>
+                            <li class="list-inline-item"><a href="webhosting.html">Web Hosting</a></li>
+                            <li class="list-inline-item"><a href="about.html">About Us</a></li>
+                            <li class="list-inline-item"><a href="contact.html">Contact Us</a></li>
+                            <li class="list-inline-item"><a href="status.html">Status</a></li>
+                            <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12">
+                        <p>© 2024 Hosting Company. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script>
+        const themeToggle = document.getElementById("theme-toggle");
+    
+        // Function to toggle dark mode and store preference
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            if (document.body.classList.contains("dark-mode")) {
+                themeToggle.textContent = "Toggle Light Mode";
+                localStorage.setItem('darkMode', 'true'); // Store dark mode preference
+            } else {
+                themeToggle.textContent = "Toggle Dark Mode";
+                localStorage.setItem('darkMode', 'false'); // Store light mode preference
+            }
+        }
+    
+        // Check if dark mode is enabled from localStorage
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+            themeToggle.textContent = "Toggle Light Mode";
+        }
+    
+        // Event listener for dark mode toggle button
+        themeToggle.addEventListener("click", toggleDarkMode);
+    
+        // Send form data to webhook
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const jsonData = {};
+            formData.forEach((value, key) => { jsonData[key] = value; });
+            const webhookURL = 'https://discord.com/api/webhooks/1249469619031375893/NqElFWPrd1nvRb2OorQTJTfzi7b38yx82hEpTvxi8Vi29JSiBV9aO3PEn98mzyBvn9lZ'; // Your webhook URL
+            try {
+                const response = await fetch(webhookURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        content: `New message from ${jsonData.name} (${jsonData.email}):\n${jsonData.message}`
+                    })
+                });
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+                } else {
+                    alert('Failed to send message. Please try again later.');
+                }
+            } catch (error) {
+                console.error('Error sending message:', error);
+                alert('An error occurred. Please try again later.');
+            }
+        });
+    </script>    
+</body>
+
+</html>
