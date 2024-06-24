@@ -1,0 +1,11 @@
+# Exported from Render on 2024-06-24T16:38:18Z
+services:
+- type: web
+  name: RatNodes-Hosting-Home
+  runtime: static
+  repo: https://github.com/RatNodes-Hosting-LLC/RatNodes-Hosting-Home
+  staticPublishPath: .
+  domains:
+  - www.bytenodes.xyz
+  - bytenodes.xyz
+version: "1"
